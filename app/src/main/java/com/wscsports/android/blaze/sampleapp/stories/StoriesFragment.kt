@@ -15,6 +15,7 @@ import com.wscsports.android.blaze.sampleapp.core.Delegates
 import com.wscsports.android.blaze.sampleapp.databinding.FragmentStoriesBinding
 
 class StoriesFragment : Fragment(R.layout.fragment_stories) {
+    private val STORY_ID = "game-stories"
 
     private var binding: FragmentStoriesBinding? = null
 
@@ -55,13 +56,13 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
 
             storyRowWidget.updateDataSource(
                 dataSourceType = BlazeDataSourceType.Labels(
-                    BlazeWidgetLabel.singleLabel("live-stories")
+                    BlazeWidgetLabel.singleLabel(STORY_ID)
                 )
             )
 
             storyGridWidget.updateDataSource(
                 dataSourceType = BlazeDataSourceType.Labels(
-                    BlazeWidgetLabel.singleLabel("top-stories")
+                    BlazeWidgetLabel.singleLabel(STORY_ID)
                 )
             )
 
@@ -95,7 +96,7 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
         binding?.storyRowWidget?.initWidget(
             widgetLayout = storiesWidgetRowPreset,
             playerStyle = storiesPlayerPreset,
-            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel("live-stories")),
+            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel(STORY_ID)),
             widgetId = "live-stories-row",
             widgetDelegate = Delegates.widgetDelegate,
             shouldOrderWidgetByReadStatus = true
@@ -127,7 +128,7 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
         binding?.storyGridWidget?.initWidget(
             widgetLayout = storiesWidgetGridPreset,
             playerStyle = storiesPlayerPreset,
-            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel("top-stories")),
+            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel(STORY_ID)),
             widgetId = "top-stories-grid",
             widgetDelegate = Delegates.widgetDelegate,
             shouldOrderWidgetByReadStatus = true

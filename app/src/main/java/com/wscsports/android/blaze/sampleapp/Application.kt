@@ -20,7 +20,7 @@ class Application : Application() {
 
         BlazeSDK.init(
             // Please provide valid API-KEY here
-            apiKey = "[API_KEY]",
+            apiKey = "739741c1465c4d0681b39e4b3e633730",
             cachingLevel = BlazeCachingLevel.DEFAULT,
             cachingSize = 512,
             sdkDelegate = Delegates.globalDelegate,

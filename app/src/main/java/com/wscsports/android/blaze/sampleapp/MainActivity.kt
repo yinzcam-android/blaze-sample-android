@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun prepareMomentsContainer() {
         BlazeMomentsPlayerContainer.prepareMoments(
             containerId = "blaze-moments-container-unique-id",
-            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel("moments"))
+            dataSource = BlazeDataSourceType.Labels(BlazeWidgetLabel.singleLabel("all-access"))
         )
     }
 
