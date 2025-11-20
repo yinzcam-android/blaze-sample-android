@@ -74,8 +74,13 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
 
     private fun initRowWidget() {
         // Using default Preset
-        val storiesWidgetRowPreset = BlazeWidgetLayout.Presets.StoriesWidget.Row.circles
-
+        val storiesWidgetRowPreset = BlazeWidgetLayout.Presets.StoriesWidget.Row.circles.apply{
+            widgetItemStyle.statusIndicator.unreadState.apply{
+                textStyle.textColor  = android.graphics.Color.GREEN
+                backgroundColor = android.graphics.Color.RED
+                isVisible = true
+            }
+        }
         // Using default player Preset
         val storiesPlayerPreset = BlazeStoryPlayerStyle.base()
 
@@ -105,7 +110,13 @@ class StoriesFragment : Fragment(R.layout.fragment_stories) {
 
     private fun initGridWidget() {
         // Using default Preset
-        val storiesWidgetGridPreset = BlazeWidgetLayout.Presets.StoriesWidget.Grid.twoColumnsVerticalRectangles
+        val storiesWidgetGridPreset = BlazeWidgetLayout.Presets.StoriesWidget.Grid.twoColumnsVerticalRectangles.apply{
+            widgetItemStyle.statusIndicator.unreadState.apply{
+                textStyle.textColor  = android.graphics.Color.GREEN
+                backgroundColor = android.graphics.Color.RED
+                isVisible = true
+            }
+        }
 
         // Using default player Preset
         val storiesPlayerPreset = BlazeStoryPlayerStyle.base()

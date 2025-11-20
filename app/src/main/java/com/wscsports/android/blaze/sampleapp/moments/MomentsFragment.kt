@@ -74,7 +74,15 @@ class MomentsFragment : Fragment(R.layout.fragment_moments) {
 
     private fun initRowWidget() {
         // Using rectangles Preset
-        val momentsWidgetRowPreset = BlazeWidgetLayout.Presets.MomentsWidget.Row.verticalRectangles
+        val momentsWidgetRowPreset = BlazeWidgetLayout.Presets.MomentsWidget.Row.verticalRectangles.apply{
+            widgetItemStyle.statusIndicator.unreadState.apply{
+                textStyle.textColor  = android.graphics.Color.GREEN
+                backgroundColor = android.graphics.Color.RED
+                isVisible = true
+            }
+        }
+
+
 
         // Using default player Preset
         val momentsPlayerPreset = BlazeMomentsPlayerStyle.base()
@@ -97,7 +105,13 @@ class MomentsFragment : Fragment(R.layout.fragment_moments) {
 
     private fun initGridWidget() {
         // Using 2 columns  Preset
-        val momentsWidgetGridPreset = BlazeWidgetLayout.Presets.MomentsWidget.Grid.twoColumnsVerticalRectangles
+        val momentsWidgetGridPreset = BlazeWidgetLayout.Presets.MomentsWidget.Grid.twoColumnsVerticalRectangles.apply{
+            widgetItemStyle.statusIndicator.unreadState.apply{
+                textStyle.textColor  = android.graphics.Color.GREEN
+                backgroundColor = android.graphics.Color.RED
+                isVisible = true
+            }
+        }
 
         // Using default player Preset
         val momentsPlayerPreset = BlazeMomentsPlayerStyle.base()
