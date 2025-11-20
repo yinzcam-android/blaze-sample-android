@@ -75,10 +75,17 @@ class MomentsFragment : Fragment(R.layout.fragment_moments) {
     private fun initRowWidget() {
         // Using rectangles Preset
         val momentsWidgetRowPreset = BlazeWidgetLayout.Presets.MomentsWidget.Row.verticalRectangles.apply{
-            widgetItemStyle.statusIndicator.unreadState.apply{
-                textStyle.textColor  = android.graphics.Color.GREEN
-                backgroundColor = android.graphics.Color.RED
-                isVisible = true
+            widgetItemStyle.statusIndicator.let{
+                it.unreadState.apply{
+                    textStyle.textColor  = android.graphics.Color.GREEN
+                    backgroundColor = android.graphics.Color.RED
+                    isVisible = true
+                }
+                it.readState.apply{
+                    textStyle.textColor = android.graphics.Color.CYAN;
+                    backgroundColor = android.graphics.Color.BLUE;
+                    isVisible = true
+                }
             }
         }
 
@@ -106,10 +113,17 @@ class MomentsFragment : Fragment(R.layout.fragment_moments) {
     private fun initGridWidget() {
         // Using 2 columns  Preset
         val momentsWidgetGridPreset = BlazeWidgetLayout.Presets.MomentsWidget.Grid.twoColumnsVerticalRectangles.apply{
-            widgetItemStyle.statusIndicator.unreadState.apply{
-                textStyle.textColor  = android.graphics.Color.GREEN
-                backgroundColor = android.graphics.Color.RED
-                isVisible = true
+            widgetItemStyle.statusIndicator.let{
+                it.unreadState.apply{
+                    textStyle.textColor  = android.graphics.Color.GREEN
+                    backgroundColor = android.graphics.Color.RED
+                    isVisible = true
+                }
+                it.readState.apply{
+                    textStyle.textColor = android.graphics.Color.CYAN;
+                    backgroundColor = android.graphics.Color.BLUE;
+                    isVisible = true
+                }
             }
         }
 
